@@ -1,8 +1,8 @@
-// getting the elements i need
+
 var spinWrap = document.getElementById('spinWrap');
 var type = document.getElementById('type');
 
-// variables for the spinning
+
 var rotation = 0;
 var spinning = false;
 
