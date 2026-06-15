@@ -1,0 +1,67 @@
+/* this resets all the default browser stuff */
+* {
+  box-sizing: border-box;
+}
+
+/* making the background black and centering everything */
+body {
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* puts the two images side by side */
+.scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* wrapper for the spinning heru */
+.spin-wrap {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+/* both sides of the heru image */
+.face {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  backface-visibility: hidden;
+}
+
+/* front face stays normal */
+.front {
+  transform: rotateY(0deg);
+}
+
+/* back face is flipped so it looks right when spinning */
+.back {
+  transform: rotateY(180deg) scaleX(-1);
+}
+
+/* the wawahia type image */
+#type {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  cursor: pointer;
+  /* tried adding a transition so it doesnt just snap */
+  transition: filter 0.3s;
+}
+
+/* when you click it, it goes blurry - trying to make it look cracked */
+/* not sure if this is the best way but it kind of works */
+#type.cracked {
+  filter: contrast(3) blur(0.8px) opacity(0.6);
+}
